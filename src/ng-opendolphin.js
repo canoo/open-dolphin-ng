@@ -119,4 +119,4 @@ angular.module('OpenDolphin').factory('dolphinNgBinder', function($timeout, dolp
 	};
 
 });
-
+//# sourceMappingURL=ng-opendolphin.js.map
