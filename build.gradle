@@ -12,18 +12,8 @@ dependencies {
 }
 
 task callNpmInstall(type: NpmInstallTask) {
-
 }
 
-/*
-task callNpmInstall(type: Exec) {
-    inputs.file 'package.json'
-    outputs.dir 'node_modules'
-    executable 'npm'
-    args 'install'
-}
-
-*/
 task buildjs(group: 'js', type: GulpTask, dependsOn: callNpmInstall) {
     commands = ['buildjs']
 }
