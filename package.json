@@ -1,0 +1,11 @@
+{
+  "name": "ng-opendolphin",
+  "description": "ng-opendolphin",
+  "author": "Sven Ehrke <sven.ehrke@sven-ehrke.de>",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp-jshint": "1.9.4"
+  },
+  "engine": "node >= 0.4.1"
+}
