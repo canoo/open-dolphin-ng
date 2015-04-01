@@ -1,5 +1,5 @@
 build/
 .gradle/
-dist/
+gulp_out/
 node_modules/
 .idea/
