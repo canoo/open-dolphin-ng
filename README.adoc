@@ -1,0 +1,20 @@
+= OpenDolphin - angular.js Adapter
+
+== Build instructions
+
+Prerequisites:
+
+* npm installed
+
+Invoke:
+
+* npm install
+* gulp buildjs
+
+This will produce a folder `gulp_out` with the filess
+
+* `ng-opendolphin.js`
+* `ng-opendolphin.min.js`
+
+TBD: produce a jar file so that it can be referenced by java based web applications
+
