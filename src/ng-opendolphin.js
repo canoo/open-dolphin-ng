@@ -1,5 +1,8 @@
 (function () {
 "use strict";
+/* global angular */
+/* global opendolphin */
+
 angular.module('OpenDolphin', []);
 
 angular.module('OpenDolphin').provider('$dolphinConfig', function() {
