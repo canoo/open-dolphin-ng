@@ -5,6 +5,7 @@
 Prerequisites:
 
 * npm installed
+* gulp installed
 
 Invoke:
 
