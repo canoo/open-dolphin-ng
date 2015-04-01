@@ -1,0 +1,51 @@
+
+plugins {
+  id "com.eriwen.gradle.js" version "1.12.1"
+}
+apply plugin : 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    //compile 'org.webjars:bootstrap:3.3.1'
+}
+
+ext {
+    jsSourceDir = "src"
+    jsOutputDir = "$buildDir/js"
+}
+
+javascript.source {
+    dev {
+        js {
+            srcDir 'src'
+            include "*.js"
+            exclude "*.min.js"
+        }
+    }
+    prod {
+        js {
+            srcDir 'src'
+            include "*.min.js"
+        }
+    }
+}
+
+combineJs {
+    //encoding = "UTF-8"
+    source = javascript.source.dev.js.files
+    dest = file("${jsOutputDir}/ng-opendolphin.js")
+}
+
+minifyJs {
+    source = combineJs
+    dest = file("${jsOutputDir}/ng-opendolphin-min.js")
+    //sourceMap = file("${jsOutputDir}/ng-opendolphin.sourcemap.json")
+    sourceMap = file("${jsOutputDir}/ng-opendolphin.js.map")
+
+    closure {
+        warningLevel = 'QUIET'
+    }
+}
