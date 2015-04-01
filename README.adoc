@@ -9,14 +9,15 @@ Prerequisites:
 
 === with gradle:
 
-Call `./gradlew buildjs`
+Call `./gradlew jar`
 
 [NOTE]
 Internally this calls `npm install` and `gulp buildjs`
 
-This produces a folder `gulp_out` with the files `ng-opendolphin.js` and `ng-opendolphin.min.js`
+This produces a folder `gulp_out` with the files `ng-opendolphin.js` and `ng-opendolphin.min.js`.
+In addition these files will be packed into a jar file: `build\libs\open-dolphin-ng.jar`
 
+TBD:
 
-
-TBD: produce a jar file so that it can be referenced by java based web applications
+* automated publishing to bintray
 

@@ -7,6 +7,17 @@ repositories {
     jcenter()
 }
 
+ext {
+    webjarconfig = [
+        staticWebFilesDir : "${projectDir}/gulp_out",
+        baseDir: "META-INF/resources/",
+        subDir : "webjars/org/opendolphin"
+    ]
+}
+configurations {
+    webjar
+}
+
 dependencies {
     //compile 'org.webjars:bootstrap:3.3.1'
 }
@@ -16,4 +27,12 @@ task callNpmInstall(type: NpmInstallTask) {
 
 task buildjs(group: 'js', type: GulpTask, dependsOn: callNpmInstall) {
     commands = ['buildjs']
+}
+
+jar {
+    dependsOn buildjs
+    from(fileTree(webjarconfig.staticWebFilesDir)) {
+        into webjarconfig.baseDir + webjarconfig.subDir
+    }
+    outputs.file archivePath
 }
