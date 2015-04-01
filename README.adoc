@@ -11,7 +11,7 @@ Invoke:
 * npm install
 * gulp buildjs
 
-This will produce a folder `gulp_out` with the filess
+This will produce a folder `gulp_out` with the files
 
 * `ng-opendolphin.js`
 * `ng-opendolphin.min.js`
