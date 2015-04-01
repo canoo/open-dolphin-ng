@@ -7,15 +7,16 @@ Prerequisites:
 * npm installed
 * gulp installed
 
-Invoke:
+=== with gradle:
 
-* npm install
-* gulp buildjs
+Call `./gradlew buildjs`
 
-This will produce a folder `gulp_out` with the files
+[NOTE]
+Internally this calls `npm install` and `gulp buildjs`
 
-* `ng-opendolphin.js`
-* `ng-opendolphin.min.js`
+This produces a folder `gulp_out` with the files `ng-opendolphin.js` and `ng-opendolphin.min.js`
+
+
 
 TBD: produce a jar file so that it can be referenced by java based web applications
 

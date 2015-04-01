@@ -1,7 +1,6 @@
+import org.opendolphin.gradle.GulpTask
+import org.opendolphin.gradle.NpmInstallTask
 
-plugins {
-  id "com.eriwen.gradle.js" version "1.12.1"
-}
 apply plugin : 'java'
 
 repositories {
@@ -12,40 +11,19 @@ dependencies {
     //compile 'org.webjars:bootstrap:3.3.1'
 }
 
-ext {
-    jsSourceDir = "src"
-    jsOutputDir = "$buildDir/js"
+task callNpmInstall(type: NpmInstallTask) {
+
 }
 
-javascript.source {
-    dev {
-        js {
-            srcDir 'src'
-            include "*.js"
-            exclude "*.min.js"
-        }
-    }
-    prod {
-        js {
-            srcDir 'src'
-            include "*.min.js"
-        }
-    }
+/*
+task callNpmInstall(type: Exec) {
+    inputs.file 'package.json'
+    outputs.dir 'node_modules'
+    executable 'npm'
+    args 'install'
 }
 
-combineJs {
-    //encoding = "UTF-8"
-    source = javascript.source.dev.js.files
-    dest = file("${jsOutputDir}/ng-opendolphin.js")
-}
-
-minifyJs {
-    source = combineJs
-    dest = file("${jsOutputDir}/ng-opendolphin-min.js")
-    //sourceMap = file("${jsOutputDir}/ng-opendolphin.sourcemap.json")
-    sourceMap = file("${jsOutputDir}/ng-opendolphin.js.map")
-
-    closure {
-        warningLevel = 'QUIET'
-    }
+*/
+task buildjs(group: 'js', type: GulpTask, dependsOn: callNpmInstall) {
+    commands = ['buildjs']
 }
