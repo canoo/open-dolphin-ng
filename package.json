@@ -5,7 +5,11 @@
   "dependencies": {
   },
   "devDependencies": {
-    "gulp-jshint": "1.9.4"
+    "gulp-jshint": "1.9.4",
+    "gulp-concat": "2.5.2",
+    "gulp-rename": "1.2.0",
+    "gulp-uglifyjs": "0.6.1",
+    "gulp-notify": "2.2.0"
   },
   "engine": "node >= 0.4.1"
 }
