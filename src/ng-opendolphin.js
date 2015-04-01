@@ -1,3 +1,5 @@
+(function () {
+"use strict";
 angular.module('OpenDolphin', []);
 
 angular.module('OpenDolphin').provider('$dolphinConfig', function() {
@@ -22,7 +24,7 @@ angular.module('OpenDolphin').factory('dolphin', function(dol, $dolphinConfig) {
 });
 
 angular.module('OpenDolphin').factory('ODAPI', function(dol, $dolphinConfig) {
-	return $dolphinConfig.ODAPI
+	return $dolphinConfig.ODAPI;
 });	
 
 angular.module('OpenDolphin').factory('dolphinNgBinder', function($timeout, dolphin) {
@@ -38,11 +40,11 @@ angular.module('OpenDolphin').factory('dolphinNgBinder', function($timeout, dolp
 						f(attr);
 					}
 					else {
-						console.log("ERROR: cannot find attribute: ", attrName, " on pm: ", pmId)
+						console.log("ERROR: cannot find attribute: ", attrName, " on pm: ", pmId);
 					}
 				}
 				else {
-					console.log("ERROR: cannot find pm: ", pmId)
+					console.log("ERROR: cannot find pm: ", pmId);
 				}
 			}
 		},
@@ -119,4 +121,5 @@ angular.module('OpenDolphin').factory('dolphinNgBinder', function($timeout, dolp
 	};
 
 });
-//# sourceMappingURL=ng-opendolphin.js.map
+}());
+// sourceMappingURL=ng-opendolphin.js.map
