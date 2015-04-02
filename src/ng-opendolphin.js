@@ -83,7 +83,7 @@ angular.module('OpenDolphin').factory('dolphinNgBinder', function($timeout, dolp
 			var readModel = propertyName ? (ngModelName + '.' + propertyName) : ngModelName;
 
 			var that = this;
-			scope.$watch(readModel, function(newVal, oldVal) {
+			scope.$watch(readModel, function(newVal/*, oldVal*/) {
 				//console.log("ng-model changed: ", oldVal, " -> ",  newVal);
 				that.withAttribute(pmId, attrName, function(attr){
 					attr.setValue(newVal);
