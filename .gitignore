@@ -3,3 +3,4 @@ build/
 gulp_out/
 node_modules/
 .idea/
+*.iml
