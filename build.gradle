@@ -1,11 +1,15 @@
+plugins {
+    id "com.jfrog.bintray" version "1.0"
+}
+
 import org.opendolphin.gradle.GulpTask
 import org.opendolphin.gradle.NpmInstallTask
 
 apply plugin : 'java'
-apply plugin : 'maven'
+apply plugin: 'maven-publish'
 
 group = 'org.open-dolphin'
-version = '0.12.0B1-SNAPSHOT'
+version = '0.12.0B1'
 
 repositories {
     jcenter()
@@ -40,6 +44,34 @@ jar {
         into webjarconfig.baseDir + webjarconfig.subDir
     }
     outputs.file archivePath
+}
+
+
+publishing {
+    publications {
+        mavenJavascript(MavenPublication) {
+            //from components.java
+            artifact jar {
+            }
+        }
+    }
+}
+
+bintray {
+    dryRun = false
+    user = bintrayUser
+    key = bintrayKey
+    publications = ['mavenJavascript']
+    pkg {
+        userOrg = 'opendolphin'
+        repo = 'mavenrepo'
+        name = 'open-dolphin-ng'
+        licenses = ['Apache-2.0']
+    }
+}
+
+task install(dependsOn: 'publishMavenJavascriptPublicationToMavenLocal') << {
+    logger.info "Installing $project.name"
 }
 
 project.afterEvaluate {
