@@ -27,6 +27,7 @@ task callNpmInstall(type: NpmInstallTask) {
 
 task buildjs(group: 'js', type: GulpTask, dependsOn: callNpmInstall) {
     commands = ['buildjs']
+    outputs.dir file('gulp_out')
 }
 
 jar {
@@ -36,3 +37,8 @@ jar {
     }
     outputs.file archivePath
 }
+
+project.afterEvaluate {
+    clean.dependsOn cleanBuildjs
+}
+
