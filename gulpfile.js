@@ -9,13 +9,11 @@ var notify = require('gulp-notify');
 
 gulp.task('buildjs', function () {
 	return gulp.src('src/*.js')
-		//.pipe(jshint('.jshintrc'))
-		//.pipe(jshint.reporter('default'))
-		.pipe(sourcemaps.init({debug:true}))
+		.pipe(jshint('.jshintrc'))
+		.pipe(jshint.reporter('default'))
 		.pipe(gulp.dest('gulp_out'))
-		//.pipe(rename({suffix: '.min'}))
-		//.pipe(uglify())
-		.pipe(sourcemaps.write('.', {sourceRoot: 'src'}))
+		.pipe(rename({suffix: '.min'}))
+		.pipe(uglify())
 		.pipe(gulp.dest('gulp_out'))
 		//.pipe(notify({ message: 'buildjs task complete' }))
 		;
