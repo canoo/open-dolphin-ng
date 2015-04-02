@@ -2,6 +2,10 @@ import org.opendolphin.gradle.GulpTask
 import org.opendolphin.gradle.NpmInstallTask
 
 apply plugin : 'java'
+apply plugin : 'maven'
+
+group = 'org.open-dolphin'
+version = '0.12.0B1-SNAPSHOT'
 
 repositories {
     jcenter()
@@ -11,7 +15,7 @@ ext {
     webjarconfig = [
         staticWebFilesDir : "${projectDir}/gulp_out",
         baseDir: "META-INF/resources/",
-        subDir : "webjars/org/opendolphin"
+        subDir : "webjars/org/opendolphin/${version}"
     ]
 }
 configurations {
