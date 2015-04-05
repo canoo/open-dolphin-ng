@@ -9,7 +9,7 @@ apply plugin : 'java'
 apply plugin: 'maven-publish'
 
 group = 'org.open-dolphin'
-version = '0.12.0B1'
+version = '0.12.0B3'
 
 repositories {
     jcenter()
