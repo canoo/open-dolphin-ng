@@ -69,10 +69,7 @@ bintray {
         licenses = ['Apache-2.0']
     }
 }
-
-task install(dependsOn: 'publishMavenJavascriptPublicationToMavenLocal') << {
-    logger.info "Installing $project.name"
-}
+// Note: call 'gradlew publishToMavenLocal' for local install to '~/.m2'
 
 project.afterEvaluate {
     clean.dependsOn cleanBuildjs
