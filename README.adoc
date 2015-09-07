@@ -21,3 +21,6 @@ In addition these files will be packed into a jar file: `build\libs\open-dolphin
 * increase version number in `build.gradle` if not already done and remove _-SNAPSHOT_ from it
 * `./gradlew -i clean bintrayUpload`
 
+=== Todo
+
+* expose DolphinBuilder to NG application so that OpenDolphin can be configured by application.
