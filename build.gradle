@@ -64,6 +64,14 @@ bintray {
         repo = 'mavenrepo'
         name = 'open-dolphin-ng'
         licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/canoo/open-dolphin-ng'
+        version {
+            name = project.version
+            desc = 'OpenDolphin - angular.js Adapter'
+            released  = new Date()
+            vcsTag = project.version
+            // attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
     }
 }
 // Note: call './gradlew publishToMavenLocal' for local install to '~/.m2'
