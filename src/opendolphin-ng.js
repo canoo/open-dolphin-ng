@@ -18,12 +18,25 @@ angular.module('OpenDolphin').provider('$dolphinConfig', function() {
 
 });
 
+angular.module('OpenDolphin').provider('$dolphinBuilder', function() {
+
+	var $builder;
+	this.useBuilder = function (builder) {
+		$builder = builder;
+	};
+
+	this.$get = function () {
+		return $builder;
+	};
+
+});
+
 angular.module('OpenDolphin').service('dol', function() {
 	return opendolphin;
 });
 
-angular.module('OpenDolphin').factory('dolphin', function(dol, $dolphinConfig) {
-	return dol.dolphin($dolphinConfig.DOLPHIN_URL, true);
+angular.module('OpenDolphin').factory('dolphin', function(dol, $dolphinBuilder) {
+	return $dolphinBuilder.build();
 });
 
 angular.module('OpenDolphin').factory('ODAPI', function(dol, $dolphinConfig) {

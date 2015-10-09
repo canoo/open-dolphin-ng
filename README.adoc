@@ -14,7 +14,7 @@ Call `./gradlew jar`
 Internally this calls `npm install` and `node ./node_modules/gulp/bin/gulp.js buildjs`
 
 This produces a folder `gulp_out` with the files `ng-opendolphin.js` and `ng-opendolphin.min.js`.
-In addition these files will be packed into a jar file: `build\libs\open-dolphin-ng.jar`
+In addition these files will be packed into a jar file: `build\libs\open-dolphin-ng-VERSION.jar`
 
 === Upload to bintray
 

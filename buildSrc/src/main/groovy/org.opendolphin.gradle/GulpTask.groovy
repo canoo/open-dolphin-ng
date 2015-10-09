@@ -20,9 +20,11 @@ public class GulpTask extends DefaultTask {
 
 	@TaskAction
 	void callGulp() {
+		def arguments = isWindows() ? [$/.\node_modules\gulp\bin\gulp.js/$] + commands : ['./node_modules/gulp/bin/gulp.js'] + commands
+		logger.info "calling node.js: node $arguments"
 		project.exec {
 			executable 'node'
-			isWindows() ? args [$/.\node_modules\gulp\bin\gulp.js/$] + commands : args ['./node_modules/gulp/bin/gulp.js'] + commands
+			args arguments
 		}
 	}
 
